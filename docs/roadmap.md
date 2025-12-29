@@ -1,42 +1,42 @@
-# Project Roadmap – Kerala Natural Tea
+# BusinessBook Roadmap
 
-This roadmap documents the phased learning and implementation journey of the Kerala Natural Tea e-commerce platform.
+## Phase 1 – Static BusinessBook
+- Platform landing page
+- Merchant profile page
+- Deals as posts
+- GA4 integration
+- CI/CD deployment
 
----
+## Phase 2 – Frontend Framework
+- Next.js migration
+- Component-based architecture
+- Routing & layout system
 
-## ✅ Phase 0 – Git, Docker, CI/CD
-**Status:** Completed  
-**Outcome:**
-- Git version control established
-- Dockerized static website using Nginx
-- CI/CD pipeline implemented using GitHub Actions
-- Automated deployment to GitHub Pages
+## Phase 3 – Backend APIs
+- Merchant service
+- Deal service
+- Booking service
 
----
+## Phase 4 – Database
+- PostgreSQL
+- Multi-merchant schema
+- Order & fulfilment model
 
-## ✅ Phase 1 – Static Website (HTML/CSS)
-**Status:** Completed  
+## Phase 5 – Merchant Tools
+- Merchant dashboard
+- Deal management
+- Booking redemption
 
-### Objectives
-- Build a brand-focused static website
-- Establish trust and product story
-- Set foundation for future frontend and backend integration
+## Phase 6 – Payments
+- Payment gateway integration
+- Settlement logic
+- Refund handling
 
-### Deliverables
-- Semantic HTML5 website
-- Responsive CSS (mobile-first)
-- Tea processing journey visuals
-- Google Analytics (GA4) integration
-- CI/CD-based deployment to GitHub Pages
+## Phase 7 – Cloud Deployment
+- AWS
+- Scalable infrastructure
 
-### Verification
-- Website publicly accessible
-- GA4 Realtime confirms active users
-- CI/CD pipeline auto-deploys on every push
-
----
-
-## ⏳ Phase 2 – Frontend Framework
-**Status:** Planned  
-React or Next.js migration without UI redesign
-
+## Phase 8 – Monitoring & Security
+- Logging
+- Alerts
+- Security hardening
