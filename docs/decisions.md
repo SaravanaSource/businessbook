@@ -1,29 +1,17 @@
-# Technical & Architectural Decisions
+# Architectural & Product Decisions
 
-## Why Static HTML/CSS in Phase 1?
-- Focus on fundamentals before frameworks
-- Faster iteration and clarity
-- SEO-friendly and lightweight
-- Easy migration to React/Next.js later
+## BusinessBook Model
+The platform follows a LinkedIn-style business networking model
+where merchants own public profiles and post deals.
 
----
+## Deal-as-Post Decision
+Deals are treated as posts instead of products to:
+- Simplify merchant onboarding
+- Emphasize trust over transactions
 
-## Why Google Analytics in Phase 1?
-- Establish baseline observability
-- Measure real user behavior early
-- Avoid retrofitting analytics later
+## Hybrid Fulfilment
+The platform supports both local redemption and delivery-based fulfilment.
 
----
-
-## Why CI/CD from Day One?
-- Treat project like a real product
-- Prevent environment drift
-- Build DevOps habits early
-
----
-
-## Why No Backend Yet?
-- Avoid premature complexity
-- Separate UI concerns from business logic
-- Backend introduced only when UI is stable
-
+## Clean Repository Decision
+A new repository was created to reflect a clear product vision,
+platform identity, and long-term scalability.

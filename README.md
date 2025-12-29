@@ -1,141 +1,122 @@
-# Kerala Natural Tea – E-Commerce Website 🍃
+# BusinessBook 📘
 
-A learning-first, production-grade project to build an online website for selling **100% natural tea from Kerala**.
-This repository documents the *entire journey* — from **Hello World** to a **cloud-deployed e-commerce platform** with CI/CD.
+BusinessBook is a **business networking and deal-booking platform** inspired by LinkedIn, built specifically for **merchants and users**.
 
----
-
-## Project Vision
-
-Build a real business-ready website that:
-- Showcases authentic Kerala tea
-- Scales from static website to full e-commerce
-- Follows professional software engineering practices
-- Uses CI/CD from day one
-
-This project is designed to **learn by building**, step by step.
+Merchants create verified business profiles and post deals.  
+Users discover businesses, follow them, book deals, and either **visit locally** or **opt for delivery** when applicable.
 
 ---
 
-## Learning Roadmap
+## Product Vision
 
-Phase 0 – Git, Docker, CI/CD (Completed)  
-Phase 1 – Static Website (HTML/CSS) (In Progress)  
-Phase 2 – Frontend Framework (Planned)  
-Phase 3 – Backend APIs (Planned)  
-Phase 4 – Database – PostgreSQL (Planned)  
-Phase 5 – Authentication & Admin (Planned)  
-Phase 6 – Payments (Planned)  
-Phase 7 – Cloud Deployment (Planned)  
-Phase 8 – Monitoring & Security (Planned)
+Build a **local-first BusinessBook** where:
+- Businesses are represented through **profiles**, not anonymous listings
+- Deals are **posted directly by merchants**
+- Trust is established **before transactions**
+- Users can choose **Visit & Collect** or **Delivery**
+- The platform scales from **one merchant to many**
 
 ---
 
-## Tech Stack
+## What Makes BusinessBook Different
 
-### Current
-- HTML5, CSS3
-- Docker, Nginx
-- GitHub Actions (CI/CD)
-- GitHub Pages
+| Traditional Marketplaces | BusinessBook |
+|--------------------------|--------------|
+| Product-centric | Business-centric |
+| Transaction-first | Trust-first |
+| Anonymous sellers | Verified businesses |
+| Platform-controlled listings | Merchant-owned profiles |
 
-### Planned
-- React or Next.js
-- Node.js backend
-- PostgreSQL
-- Razorpay / Stripe
-- AWS (EC2, S3, CloudFront)
+---
+
+## Core Concept
+
+**BusinessBook =**
+- LinkedIn-style business profiles
+- Deals treated as **posts**, not products
+- Hybrid fulfilment (Visit & Collect / Delivery)
+
+---
+
+## Platform Actors
+
+### User
+- Discovers businesses
+- Follows merchants
+- Books deals
+- Redeems locally or receives delivery
+
+### Merchant
+- Owns a public business profile
+- Posts deals
+- Serves customers locally or via delivery
+
+---
+
+## Deal & Booking Model
+
+- Deals are published as **posts**
+- Each deal declares its fulfilment type:
+  - Visit & Collect
+  - Delivery
+  - Hybrid (user chooses)
+- Booking a deal creates a **platform order**
+
+---
+
+## Test Merchant
+
+**Kerala Natural Tea** is used as the initial test merchant to validate:
+- Business profile structure
+- Deal-as-post model
+- Local vs delivery flows
+- Platform scalability assumptions
 
 ---
 
 ## Repository Structure
 
-kerala-natural-tea/
-├── .github/
-│   └── workflows/
-│       └── ci-cd.yml
+businessbook/
 ├── website/
-│   ├── index.html
-│   ├── styles.css
-│   └── images/
-├── docs/
-│   ├── roadmap.md
-│   ├── setup.md
-│   ├── cicd.md
-│   └── decisions.md
-├── Dockerfile
+│ ├── index.html
+│ ├── styles.css
+│ └── merchants/
+│ └── kerala-natural-tea/
+│ └── index.html
+│
+├── .github/
+│ └── workflows/
+│ └── ci-cd.yml
+│
 └── README.md
 
----
-
-## CI/CD Pipeline
-
-This project uses **GitHub Actions**.
-
-Pipeline features:
-- Triggered on every push and pull request
-- Code validation
-- Docker image build
-- Automated deployment
-
-CI/CD is introduced early to follow real-world DevOps practices.
 
 ---
 
-## Run Locally (Docker)
+## Current Phase
 
-Build the Docker image:
+### Phase 1 – Static BusinessBook
 
-docker build -t kerala-tea .
+**Included**
+- BusinessBook landing page
+- Merchant profile page (Kerala Natural Tea)
+- Deal posts as UI components
+- Google Analytics (GA4)
+- CI/CD with GitHub Pages
 
-Run the container:
+**Excluded by Design**
+- Authentication
+- Backend APIs
+- Database
+- Payments
 
-docker run -p 8080:80 kerala-tea
-
-Open in browser:
-
-http://localhost:8080
-
----
-
-## Documentation
-
-All detailed documentation is stored in the `docs/` folder:
-
-- roadmap.md – Learning phases and progress
-- setup.md – Local and Docker setup
-- cicd.md – CI/CD workflow explanation
-- decisions.md – Technical and architectural decisions
+> Phase 1 focuses on **clarity, trust, and structure**, not features.
 
 ---
 
-## Why This Project Exists
+## Local Setup
 
-This project serves as:
-- A structured learning journey
-- A portfolio-quality project
-- A foundation for a real business idea
-- Proof of professional engineering discipline
+```bash
+npx serve website
 
----
-
-## Future Enhancements
-
-- Product catalog and checkout
-- Admin dashboard
-- Secure payment integration
-- Cloud-native deployment
-- Monitoring and backups
-
-
-## Project Status
-
-- Phase 0: ✅ Completed
-- Phase 1: ✅ Completed (Static Website + Analytics)
-- Phase 2: ⏳ Planned (React / Next.js Migration)
-
----
-
-## License
-
-MIT License
+http://localhost:3000

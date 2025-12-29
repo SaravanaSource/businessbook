@@ -4,5 +4,5 @@
 
 Build the Docker image:
 ```bash
-docker build -t kerala-tea .
+docker build -t businessbook .
 
