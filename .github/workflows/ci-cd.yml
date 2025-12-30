@@ -28,6 +28,9 @@ jobs:
       - name: Check landing page
         run: test -f website/index.html
 
+      - name: Grant execute permission
+        run: chmod +x scripts/validate_env.sh
+
       - name: Validate environment
         run: ./scripts/validate_env.sh
 
