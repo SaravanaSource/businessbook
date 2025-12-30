@@ -28,6 +28,9 @@ jobs:
       - name: Check landing page
         run: test -f website/index.html
 
+      - name: Grant execute permission
+        run: chmod +x scripts/validate_env.sh
+
       - name: Validate environment
         run: ./scripts/validate_env.sh
 
@@ -203,3 +206,10 @@ jobs:
           path: dist
 
       - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: dist
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
