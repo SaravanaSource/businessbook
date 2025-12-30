@@ -3,206 +3,129 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Kerala Natural Tea | Pure From the Hills</title>
 
+  <title>BusinessBook | Discover Trusted Local Businesses</title>
   <meta name="description"
-        content="Naturally grown tea from the hills of Kerala. Ethically sourced, traditionally processed, and carefully packed." />
+        content="BusinessBook helps you discover verified local businesses, follow them, book trusted deals, and visit or get delivery." />
 
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="styles.css" />
 
-    <!-- Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-EPEHLSLHH3"></script>
+  <!-- Google Analytics GA4 -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-EPEHLSLHH3"></script>
 
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
 
-  gtag('config', 'G-EPEHLSLHH3');
+    gtag('config', 'G-EPEHLSLHH3');
 
-</script>
-
+  </script>
+    <!-- Paste your existing GA script here -->
 </head>
+
 <body>
 
-  <!-- Header -->
-  <header class="site-header">
-    <div class="container header-flex">
-      <h1 class="brand">Kerala Natural Tea</h1>
-      <nav>
-        <a href="#product">Tea</a>
-        <a href="#process">Process</a>
-        <a href="#logistics">Logistics</a>
-        <a href="#contact">Contact</a>
-      </nav>
-    </div>
+  <!-- ================= HEADER ================= -->
+  <header class="header">
+    <nav class="nav container">
+      <div class="logo">BusinessBook</div>
+
+      <ul class="nav-links">
+        <li><a href="#how">How it Works</a></li>
+        <li><a href="#merchants">Merchants</a></li>
+        <li><a href="#why">Why BusinessBook</a></li>
+      </ul>
+    </nav>
   </header>
 
-  <!-- Hero -->
+  <!-- ================= HERO ================= -->
   <section class="hero">
-    <div class="hero-overlay"></div>
-    <div class="hero-content container">
-      <h2>Naturally Grown Tea<br>From the Hills of Kerala</h2>
-      <p>Carefully sourced, traditionally processed, packed with honesty.</p>
+    <div class="container hero-content">
+      <h1>Discover Trusted Local Businesses</h1>
+      <p>
+        BusinessBook is a business networking platform where merchants
+        build profiles and post deals — and users discover, follow,
+        book, and visit businesses they trust.
+      </p>
+
+      <a href="#merchants" class="btn-primary">
+        Explore Businesses
+      </a>
     </div>
   </section>
 
-  <!-- Brand Story -->
-  <section class="section">
-    <div class="container two-col">
-      <div>
-        <h2>A Family Tradition</h2>
+  <!-- ================= HOW IT WORKS ================= -->
+  <section id="how" class="section container">
+    <h2>How BusinessBook Works</h2>
+
+    <div class="steps">
+      <div class="step">
+        <h3>1. Discover Businesses</h3>
         <p>
-          Kerala Natural Tea is a small, family-owned initiative focused on
-          delivering authentic hill-grown tea. We work directly with local
-          growers, prioritizing sustainability, quality, and fair sourcing.
+          Browse verified business profiles instead of anonymous listings.
         </p>
       </div>
-      <img src="images/plantation.jpg" alt="Kerala tea plantation">
-    </div>
-  </section>
 
-  <!-- Products -->
-  <section class="section light" id="product">
-    <div class="container">
-      <h2>Our Tea</h2>
+      <div class="step">
+        <h3>2. Book a Deal</h3>
+        <p>
+          Choose deals posted directly by the merchant.
+        </p>
+      </div>
 
-      <div class="card-grid">
-        <div class="card">
-          <img src="images/tea-pack.jpg" alt="Premium tea powder">
-          <h3>Premium Tea Powder</h3>
-          <p>Rich aroma, strong flavor, and authentic Kerala character.</p>
-        </div>
-
-        <div class="card">
-          <img src="images/leaves.jpg" alt="Fresh tea leaves">
-          <h3>Fresh Tea Leaves</h3>
-          <p>Hand-picked from estates in the Western Ghats.</p>
-        </div>
-
-        <div class="card">
-          <img src="images/tea-cup.jpg" alt="Brewed tea cup">
-          <h3>Pure & Flavorful</h3>
-          <p>Perfect for daily home use and traditional preparation.</p>
-        </div>
+      <div class="step">
+        <h3>3. Visit or Get Delivery</h3>
+        <p>
+          Visit the business at your convenience or opt for delivery.
+        </p>
       </div>
     </div>
   </section>
 
-  <!-- Tea Varieties -->
-  <section class="section">
-    <div class="container two-col reverse">
-      <div>
-        <h2>Tea Varieties & Use Cases</h2>
-        <ul class="list">
-          <li>Everyday home tea</li>
-          <li>Strong morning brew</li>
-          <li>South Indian traditional preparation</li>
-          <li>Bulk use for hotels & offices</li>
+  <!-- ================= FEATURED MERCHANT ================= -->
+  <section id="merchants" class="section section-light">
+    <div class="container">
+      <h2>Featured Business</h2>
+
+      <article class="merchant-card">
+        <h3>Kerala Natural Tea</h3>
+
+        <p class="merchant-desc">
+          Authentic, 100% natural tea sourced directly from Kerala plantations.
+        </p>
+
+        <ul class="merchant-meta">
+          <li><strong>Category:</strong> Tea & Beverages</li>
+          <li><strong>Location:</strong> Kerala, India</li>
+          <li><strong>Fulfilment:</strong> Visit & Collect · Delivery Available</li>
         </ul>
-      </div>
-      <img src="images/tea-cup.jpg" alt="Traditional tea preparation">
+
+        <a href="merchants/kerala-natural-tea/index.html"
+           class="btn-secondary">
+          View Business Profile →
+        </a>
+      </article>
     </div>
   </section>
 
-  <!-- Process -->
-  <section class="section light" id="process">
-    <div class="container">
-      <h2>Our Process</h2>
+  <!-- ================= WHY BUSINESSBOOK ================= -->
+  <section id="why" class="section container">
+    <h2>Why BusinessBook?</h2>
 
-      <div class="process-grid">
-        <div>
-          <img src="images/process-1.jpg" alt="Handpicked leaves">
-          <p>Hand-picked leaves</p>
-        </div>
-        <div>
-          <img src="images/process-2.jpg" alt="Traditional processing">
-          <p>Traditional processing</p>
-        </div>
-        <div>
-          <img src="images/process-3.jpg" alt="Careful drying">
-          <p>Careful drying</p>
-        </div>
-        <div>
-          <img src="images/process-4.jpg" alt="Fresh packing">
-          <p>Fresh packing</p>
-        </div>
-      </div>
-    </div>
+    <ul class="benefits">
+      <li>Business profiles, not anonymous sellers</li>
+      <li>Deals posted directly by merchants</li>
+      <li>Visit locally or choose delivery</li>
+      <li>Built for trust, not impulse buying</li>
+    </ul>
   </section>
 
-  <!-- Packaging & Billing -->
-  <section class="section">
-    <div class="container two-col">
-      <div>
-        <h2>Packaging & Billing</h2>
-        <ul class="list">
-          <li>Available packs: 250g, 500g, 1kg</li>
-          <li>Food-grade sealed packaging</li>
-          <li>Shelf life: 12 months</li>
-          <li>GST-compliant billing</li>
-          <li>Invoice provided with every order</li>
-        </ul>
-      </div>
-      <img src="images/tea-pack.jpg" alt="Tea packaging">
-    </div>
-  </section>
-
-  <!-- Logistics -->
-  <section class="section light" id="logistics">
-    <div class="container">
-      <h2>Logistics & Delivery Coverage</h2>
-
-      <div class="logistics-box">
-        <p><strong>Delivery Regions:</strong> Kerala, Tamil Nadu, Karnataka</p>
-        <p><strong>Pan-India:</strong> Available for bulk orders</p>
-        <p><strong>Dispatch:</strong> Within 2–3 business days</p>
-        <p><strong>Partners:</strong> India Post & private couriers</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- Bulk Orders -->
-  <section class="section">
-    <div class="container">
-      <h2>Bulk Orders & Partnerships</h2>
-      <p class="wide-text">
-        We welcome bulk requirements, hospitality partnerships, and long-term
-        distribution inquiries. Please contact us directly for discussions.
-      </p>
-    </div>
-  </section>
-
-  <!-- FAQ -->
-  <section class="section light">
-    <div class="container">
-      <h2>Frequently Asked Questions</h2>
-      <ul class="faq">
-        <li>Is this tea 100% natural? — Yes.</li>
-        <li>Do you ship outside Kerala? — Yes, for bulk orders.</li>
-        <li>Is GST billing available? — Yes.</li>
-        <li>Is this suitable for daily consumption? — Absolutely.</li>
-      </ul>
-    </div>
-  </section>
-
-  <!-- Contact -->
-  <section class="section" id="contact">
-    <div class="container contact-box">
-      <h2>Contact</h2>
-      <p><strong>Founder:</strong> Murugan N</p>
-      <p><strong>Location:</strong> Kerala, India</p>
-      <p><strong>Email:</strong> swethamurugan1507@gmail.com</p>
-      <p><strong>Phone:</strong> +91-9497269131, +91-7826020207</p>
-      <p><strong>whatsapp:</strong> 7708795085, 9786859455</p>
-    </div>
-  </section>
-
-  <!-- Footer -->
-  <footer class="site-footer">
-    <div class="container">
-      <p>© 2025 Kerala Natural Tea. All rights reserved.</p>
-      <p class="small">Authentic sourcing • Traditional care • Honest business</p>
+  <!-- ================= FOOTER ================= -->
+  <footer class="footer">
+    <div class="container footer-content">
+      <p>© 2025 BusinessBook</p>
+      <p>Building trust between people and businesses</p>
     </div>
   </footer>
 
