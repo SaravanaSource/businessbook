@@ -1,10 +1,10 @@
-name: CI Pipeline
+name: BusinessBook CI Pipeline
 
 on:
   push:
     branches: ["main"]
     tags:
-    - "release-*"
+      - "release-*"
 
   pull_request:
     branches: ["main"]
@@ -16,7 +16,7 @@ permissions:
 jobs:
 
   validate:
-    name: Validate Structure
+    name: Validate BusinessBook Structure
     runs-on: ubuntu-latest
 
     steps:
@@ -25,10 +25,10 @@ jobs:
       - name: Check website folder
         run: test -d website
 
-      - name: Check index.html
+      - name: Check landing page
         run: test -f website/index.html
 
-      - name: Check environment
+      - name: Validate environment
         run: ./scripts/validate_env.sh
 
 
@@ -45,7 +45,7 @@ jobs:
 
 
   build:
-    name: Build Versioned Artifact
+    name: Build BusinessBook Artifact
     runs-on: ubuntu-latest
     needs: lint
 
@@ -70,12 +70,12 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-artifact@v4
         with:
-          name: website-${{ steps.version.outputs.build_version }}
+          name: businessbook-${{ steps.version.outputs.build_version }}
           path: dist
 
 
   verify-artifact:
-    name: Verify Build Artifact
+    name: Verify BusinessBook Artifact
     runs-on: ubuntu-latest
     needs: build
 
@@ -86,7 +86,7 @@ jobs:
       - name: Download artifact
         uses: actions/download-artifact@v4
         with:
-          name: website-${{ needs.build.outputs.build_version }}
+          name: businessbook-${{ needs.build.outputs.build_version }}
           path: verify-dist
 
       - name: Verify artifact contents
@@ -96,7 +96,7 @@ jobs:
 
 
   docker-build:
-    name: Build & Push Docker Image
+    name: Build & Push BusinessBook Docker Image
     runs-on: ubuntu-latest
     needs: verify-artifact
 
@@ -109,7 +109,7 @@ jobs:
       - name: Download build artifact
         uses: actions/download-artifact@v4
         with:
-          name: website-${{ needs.verify-artifact.outputs.build_version }}
+          name: businessbook-${{ needs.verify-artifact.outputs.build_version }}
           path: dist
 
       - name: Log in to GitHub Container Registry
@@ -128,22 +128,21 @@ jobs:
       - name: Build Docker image
         run: |
           docker build \
-            -t ghcr.io/${{ steps.normalize.outputs.owner }}/natural-tea:${{ needs.verify-artifact.outputs.build_version }} \
+            -t ghcr.io/${{ steps.normalize.outputs.owner }}/businessbook:${{ needs.verify-artifact.outputs.build_version }} \
             .
 
       - name: Push Docker image
         run: |
-          docker push ghcr.io/${{ steps.normalize.outputs.owner }}/natural-tea:${{ needs.verify-artifact.outputs.build_version }}
+          docker push ghcr.io/${{ steps.normalize.outputs.owner }}/businessbook:${{ needs.verify-artifact.outputs.build_version }}
 
 
   deploy-staging:
-    name: Deploy to Staging (Simulation)
+    name: Deploy BusinessBook (Staging Simulation)
     runs-on: ubuntu-latest
     needs: docker-build
 
     outputs:
       build_version: ${{ needs.docker-build.outputs.build_version }}
-
 
     steps:
       - name: Log in to GitHub Container Registry
@@ -161,14 +160,14 @@ jobs:
 
       - name: Pull Docker image
         run: |
-          docker pull ghcr.io/${{ steps.normalize.outputs.owner }}/natural-tea:${{ needs.docker-build.outputs.build_version }}
+          docker pull ghcr.io/${{ steps.normalize.outputs.owner }}/businessbook:${{ needs.docker-build.outputs.build_version }}
 
       - name: Run container (staging)
         run: |
           docker run -d \
-            --name natural-tea-staging \
+            --name businessbook-staging \
             -p 8080:80 \
-            ghcr.io/${{ steps.normalize.outputs.owner }}/natural-tea:${{ needs.docker-build.outputs.build_version }}
+            ghcr.io/${{ steps.normalize.outputs.owner }}/businessbook:${{ needs.docker-build.outputs.build_version }}
 
       - name: Verify application is running
         run: |
@@ -178,15 +177,14 @@ jobs:
       - name: Stop and remove container
         if: always()
         run: |
-          docker stop natural-tea-staging
-          docker rm natural-tea-staging
+          docker stop businessbook-staging
+          docker rm businessbook-staging
 
 
   deploy-pages:
-    name: Deploy Website (GitHub Pages)
+    name: Deploy BusinessBook (GitHub Pages)
     runs-on: ubuntu-latest
     needs: deploy-staging
-    # CRITICAL: This condition prevents PRs from triggering the deployment rejection
     if: github.event_name == 'push' && github.ref == 'refs/heads/main'
 
     permissions:
@@ -196,18 +194,12 @@ jobs:
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
+
     steps:
       - name: Download build artifact
         uses: actions/download-artifact@v4
         with:
-          name: website-${{ needs.deploy-staging.outputs.build_version }}
+          name: businessbook-${{ needs.deploy-staging.outputs.build_version }}
           path: dist
 
       - name: Upload Pages artifact
-        uses: actions/upload-pages-artifact@v3
-        with:
-          path: dist
-
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v4
