@@ -1,0 +1,233 @@
+/* =====================================================
+   BusinessBook – Global Styles
+   Phase 1 (Static)
+   ===================================================== */
+
+/* ================= ROOT VARIABLES ================= */
+:root {
+  --primary: #0a66c2;       /* BusinessBook blue */
+  --dark: #1f1f1f;
+  --text: #333333;
+  --muted: #666666;
+  --border: #e0e0e0;
+  --light-bg: #f5f7f9;
+  --white: #ffffff;
+}
+
+/* ================= RESET ================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ================= BASE ================= */
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  background: var(--white);
+  color: var(--text);
+  line-height: 1.6;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul {
+  list-style: none;
+}
+
+/* ================= LAYOUT ================= */
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.section {
+  padding: 70px 0;
+}
+
+.section-light {
+  background: var(--light-bg);
+}
+
+/* ================= TYPOGRAPHY ================= */
+h1, h2, h3 {
+  color: var(--dark);
+  margin-bottom: 16px;
+}
+
+h1 {
+  font-size: 2.4rem;
+}
+
+h2 {
+  font-size: 1.9rem;
+}
+
+h3 {
+  font-size: 1.2rem;
+}
+
+p {
+  margin-bottom: 14px;
+  color: var(--text);
+}
+
+/* ================= HEADER ================= */
+.header {
+  background: var(--white);
+  border-bottom: 1px solid var(--border);
+}
+
+.nav {
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--primary);
+}
+
+.nav-links {
+  display: flex;
+  gap: 24px;
+}
+
+.nav-links a {
+  font-weight: 500;
+  color: var(--dark);
+}
+
+.nav-links a:hover {
+  color: var(--primary);
+}
+
+/* ================= HERO ================= */
+.hero {
+  background: linear-gradient(180deg, #eef4fb, #ffffff);
+}
+
+.hero-content {
+  padding: 90px 0;
+  text-align: center;
+}
+
+.hero-content p {
+  max-width: 680px;
+  margin: 18px auto 30px;
+  font-size: 1.05rem;
+}
+
+/* ================= BUTTONS ================= */
+.btn-primary {
+  display: inline-block;
+  background: var(--primary);
+  color: var(--white);
+  padding: 12px 28px;
+  border-radius: 6px;
+  font-weight: 600;
+}
+
+.btn-primary:hover {
+  opacity: 0.9;
+}
+
+.btn-secondary {
+  display: inline-block;
+  margin-top: 14px;
+  font-weight: 600;
+  color: var(--primary);
+}
+
+/* ================= HOW IT WORKS ================= */
+.steps {
+  margin-top: 40px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 30px;
+}
+
+.step {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 26px;
+}
+
+/* ================= MERCHANT CARD ================= */
+.merchant-card {
+  max-width: 600px;
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 30px;
+}
+
+.merchant-desc {
+  margin-bottom: 14px;
+}
+
+.merchant-meta {
+  margin-bottom: 18px;
+}
+
+.merchant-meta li {
+  margin-bottom: 6px;
+  color: var(--muted);
+}
+
+/* ================= BENEFITS ================= */
+.benefits {
+  margin-top: 26px;
+  max-width: 600px;
+}
+
+.benefits li {
+  margin-bottom: 10px;
+  padding-left: 22px;
+  position: relative;
+}
+
+.benefits li::before {
+  content: "✔";
+  position: absolute;
+  left: 0;
+  color: var(--primary);
+  font-weight: 600;
+}
+
+/* ================= FOOTER ================= */
+.footer {
+  border-top: 1px solid var(--border);
+  background: var(--white);
+}
+
+.footer-content {
+  padding: 26px 0;
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.9rem;
+  color: var(--muted);
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+  }
+
+  .hero-content {
+    padding: 70px 0;
+  }
+
+  h1 {
+    font-size: 2rem;
+  }
+}
